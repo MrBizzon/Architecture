@@ -77,3 +77,5 @@
 ![Изображение](https://disk.yandex.lt/client/disk?idApp=client&dialog=slider&idDialog=%2Fdisk%2F2023-08-11_090827.jpg)
 
 <image src="https://ibb.co/6sWYVrP" alt="Описание картинки">
+
+<a href="https://ibb.co/6sWYVrP"><img src="https://i.ibb.co/12mZh7q/2023-08-11-090827.jpg" alt="2023-08-11-090827" border="0"></a>
