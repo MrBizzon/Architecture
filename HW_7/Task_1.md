@@ -76,4 +76,4 @@
 
 ![Изображение](https://disk.yandex.lt/client/disk?idApp=client&dialog=slider&idDialog=%2Fdisk%2F2023-08-11_090827.jpg)
 
-<image src="https://disk.yandex.lt/client/disk?idApp=client&dialog=slider&idDialog=%2Fdisk%2F2023-08-11_090827.jpg" alt="Описание картинки">
+<image src="hhttps://ibb.co/6sWYVrP" alt="Описание картинки">
