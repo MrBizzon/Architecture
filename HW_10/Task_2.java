@@ -19,11 +19,11 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     public void saveOrder(Order order) {
-        // Save the order to the database
+        // Сохраняем заказ в базе данных
         databaseConnection.execute("INSERT INTO orders (id, customer, total_amount, order_date) VALUES (?, ?, ?, ?)",
                 order.getId(), order.getCustomer(), order.getTotalAmount(), order.getOrderDate());
 
-        // Save the order items to the database
+        // Сохраняем элементы заказа в базе данных
         List<OrderItem> orderItems = order.getOrderItems();
         for (OrderItem orderItem : orderItems) {
             databaseConnection.execute("INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)",
@@ -33,7 +33,7 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     public Order loadOrderById(int orderId) {
-        // Load the order from the database
+        // Загружаем заказ из базы данных
         Object[] orderData = databaseConnection.querySingleRow("SELECT * FROM orders WHERE id = ?", orderId);
         Order order = new Order(
                 (int) orderData[0],
@@ -41,7 +41,7 @@ public class OrderRepositoryImpl implements OrderRepository {
                 (double) orderData[2],
                 (Date) orderData[3]);
 
-        // Load the order items from the database
+        // Загружаем элементы заказа из базы данных
         List<Object[]> orderItemsData = databaseConnection.query("SELECT * FROM order_items WHERE order_id = ?", orderId);
         List<OrderItem> orderItems = new ArrayList<>();
         for (Object[] orderItemData : orderItemsData) {
@@ -60,7 +60,7 @@ public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     public List<Order> loadAllOrders() {
-        // Load all orders from the database
+        // Загружаем все заказы из базы данных
         List<Order> orders = new ArrayList<>();
         List<Object[]> ordersData = databaseConnection.query("SELECT * FROM orders");
         for (Object[] orderData : ordersData) {
@@ -70,7 +70,7 @@ public class OrderRepositoryImpl implements OrderRepository {
                     (double) orderData[2],
                     (Date) orderData[3]);
 
-            // Load the order items from the database
+            // Загружаем элементы заказа из базы данных
             List<Object[]> orderItemsData = databaseConnection.query("SELECT * FROM order_items WHERE order_id = ?", order.getId());
             List<OrderItem> orderItems = new ArrayList<>();
             for (Object[] orderItemData : orderItemsData) {
